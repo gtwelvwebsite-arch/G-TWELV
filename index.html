@@ -124,7 +124,7 @@
             height: 18px;
         }
 
-        .hero-section {
+    .hero-section {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -136,15 +136,29 @@
     text-align: center;
 }
 
-.hero-image {
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
     filter: brightness(0.70);
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
 }
 
 .hero-content {
@@ -233,7 +247,10 @@
     </header>
 
 <section class="hero-section">
-    <img src="G-12 Ai.jfif" alt="G12 Delivery Van and Office Entrance" class="hero-image">
+    <div class="hero-slider">
+        <img src="assets/G-12 Ai.jfif" alt="G12 Delivery Van and Office Entrance" class="hero-slide active">
+        <img src="" alt="G12 Facility" class="hero-slide">
+    </div>
     <div class="hero-content">
         <h1 class="hero-title">G-TWELV</h1>
         <p class="hero-subtitle">Driving Innovation in Distribution and Brand Management</p>
@@ -242,7 +259,14 @@
 </section>
     
     <script>
+const slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
 
+setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+}, 5000);
     </script>
 </body>
 </html>
