@@ -1,22 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
- <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G-TWELV</title>
-
     <style>
-      
-    </style>
-    
-  </head>
+        :root {
+            --color-white: #ffffff;
+            --color-black: #000000;
+            --color-grey-dark: #333333;
+            --color-grey-medium: #777777;
+            --color-grey-light: #e0e0e0;
+            --color-yellow: #f2c811;
+        }
 
-  <body>
-    
-  </body>
-  <scipt>
-    
-  </scipt>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-black);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .main-header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid var(--color-grey-light);
+            padding: 20px 40px;
+            width: 100%;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area img {
+            max-height: 80px;
+            display: block;
+        }
+
+        .nav-area {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--color-grey-medium);
+        }
+
+        .top-links a:hover {
+            color: var(--color-yellow);
+        }
+
+        .separator {
+            color: var(--color-grey-light);
+        }
+
+        .main-menu ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .main-menu ul li a {
+            font-size: 0.9rem;
+            color: var(--color-grey-dark);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .main-menu ul li a:hover {
+            color: var(--color-yellow);
+        }
+
+        .search-icon-wrapper {
+            border-left: 1px solid var(--color-grey-light);
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-grey-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--color-yellow);
+        }
+
+        .search-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="assets/g12-logo.png" alt="G-TWELV Logo">
+                </a>
+            </div>
+            <div class="nav-area">
+                <div class="top-links">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="#news">News</a>
+                    <span class="separator">/</span>
+                    <a href="#careers">Careers</a>
+                    <span class="separator">/</span>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="#about">ABOUT US</a></li>
+                        <li><a href="#brands">OUR BRANDS</a></li>
+                        <li><a href="#sales">SALES & MARKETING</a></li>
+                        <li><a href="#distribution">DISTRIBUTION</a></li>
+                        <li class="search-icon-wrapper">
+                            <button class="search-btn" aria-label="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <script>
+
+    </script>
+</body>
 </html>
