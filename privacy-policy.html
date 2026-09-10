@@ -27,7 +27,7 @@
             line-height: 1.6;
         }
 
-        /* Header / Top Navigation Styles (Matching Home) */
+        /* Exact Header / Navigation Styles from Homepage */
         header {
             background-color: var(--color-white);
             border-bottom: 1px solid #eaeaea;
@@ -36,36 +36,56 @@
             z-index: 1000;
         }
 
-        .header-container {
+        .header-top {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 40px;
+            padding: 10px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--color-navy);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            letter-spacing: 1px;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--color-navy);
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            font-size: 0.65rem;
+            color: var(--color-cyan);
+            letter-spacing: 2px;
         }
 
         .top-links {
             display: flex;
             align-items: center;
-            gap: 20px;
-            font-size: 0.9rem;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--color-grey-medium);
         }
 
         .top-links a {
             position: relative;
             text-decoration: none;
-            color: var(--color-grey-dark);
+            color: var(--color-grey-medium);
             transition: color 0.3s ease;
-            font-weight: 500;
         }
 
         .top-links a:hover {
@@ -87,7 +107,66 @@
             width: 100%;
         }
 
-        /* Privacy Policy Content Styles */
+        .nav-divider {
+            color: #ddd;
+        }
+
+        .header-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            position: relative;
+            text-decoration: none;
+            color: var(--color-navy);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--color-cyan);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-icon {
+            font-size: 1.1rem;
+            color: var(--color-navy);
+            cursor: pointer;
+            text-decoration: none;
+            padding-left: 15px;
+            border-left: 1px solid #ddd;
+        }
+
+        /* Privacy Policy Content Area */
         .policy-container {
             max-width: 900px;
             margin: 60px auto;
@@ -236,8 +315,11 @@
                 position: static;
                 margin: 20px auto 0;
             }
-            .header-container {
+            .header-top, .header-main {
                 padding: 15px 20px;
+            }
+            .header-main {
+                justify-content: center;
             }
             .policy-container {
                 padding: 0 20px;
@@ -247,20 +329,34 @@
 </head>
 <body>
 
-   
+    <!-- Header / Navigation Matching Homepage -->
     <header>
-        <div class="header-container">
-            <a href="home.html" class="logo">G-TWELV</a>
-            <nav class="top-links">
-                <a href="home.html">Home</a>
+        <div class="header-top">
+            <a href="home.html" class="logo-container">
+                <div class="logo-text">G-12<span>GLOBAL TRADE</span></div>
+            </a>
+            <div class="top-links">
+                <a href="index.html">Home</a>
+                <span class="nav-divider">/</span>
+                <a href="home.html#news">News</a>
+                <span class="nav-divider">/</span>
+                <a href="#careers">Careers</a>
+                <span class="nav-divider">/</span>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <nav class="main-nav">
                 <a href="home.html#about">About Us</a>
                 <a href="home.html#brands">Our Brands</a>
-                <a href="home.html#news">News</a>
+                <a href="#sales">Sales & Marketing</a>
+                <a href="#distribution">Distribution</a>
             </nav>
+            <a href="#search" class="search-icon">&#128269;</a>
         </div>
     </header>
 
-    
+    <!-- Privacy Policy Main Content Area -->
     <main class="policy-container">
         <h1>Privacy Policy</h1>
         <div class="policy-date">Last Updated: September 3, 2026</div>
@@ -353,7 +449,7 @@
         </p>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer matching Homepage -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
@@ -385,9 +481,9 @@
         <div class="footer-bottom-bar">
             <a href="privacy.html">Privacy Policy</a>
             <span>|</span>
-            <a href="#terms">Terms & Conditions</a>
+            <a href="terms-and-condition.html">Terms & Conditions</a>
             <span>|</span>
-            <a href="#cookies">Cookie Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
             <span>|</span>
             <span>Copyright &copy; 2026 G-TWELV. All rights reserved.</span>
         </div>
