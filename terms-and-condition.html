@@ -1,1 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - G-TWELV</title>
+    <style>
+        :root {
+            --color-navy: #0b2545;
+            --color-cyan: #00b4d8;
+            --color-black: #111111;
+            --color-white: #ffffff;
+            --color-grey-light: #f8f9fa;
+            --color-grey-medium: #888888;
+            --color-grey-dark: #333333;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-grey-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        /* Main Header Layout Matching Homepage */
+        .main-header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid #eaeaea;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area img {
+            max-height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-area {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--color-grey-medium);
+        }
+
+        .top-links a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .top-links a:hover {
+            color: var(--color-cyan);
+        }
+
+        .top-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .top-links a:hover::after {
+            width: 100%;
+        }
+
+        .separator {
+            color: #ddd;
+        }
+
+        .main-menu ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-menu ul li a {
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .main-menu ul li a:hover {
+            color: var(--color-cyan);
+        }
+
+        .main-menu ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .main-menu ul li a:hover::after {
+            width: 100%;
+        }
+
+        .search-icon-wrapper {
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--color-cyan);
+        }
+
+        .search-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Terms & Conditions Content Area */
+        .policy-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 40px;
+        }
+
+        .policy-container h1 {
+            font-size: 2.2rem;
+            color: var(--color-navy);
+            margin-bottom: 10px;
+        }
+
+        .policy-date {
+            font-size: 0.9rem;
+            color: var(--color-grey-medium);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .policy-container h2 {
+            font-size: 1.3rem;
+            color: var(--color-navy);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .policy-container p {
+            margin-bottom: 15px;
+            color: #444444;
+        }
+
+        .policy-container ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            list-style: disc;
+            color: #444444;
+        }
+
+        .policy-container ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer Styles (Navy Theme with Custom Mapping) */
+        .footer {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            padding: 70px 40px 30px;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-white);
+            margin-bottom: 25px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a,
+        .footer-column ul li span {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--color-cyan);
+        }
+
+        .footer-bottom-bar {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #b0c4de;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 25px;
+        }
+
+        .footer-bottom-bar a {
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-bar a:hover {
+            color: var(--color-cyan);
+        }
+
+        .back-to-top {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            background-color: var(--color-white);
+            color: var(--color-navy);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--color-cyan);
+            color: var(--color-white);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .footer-bottom-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .back-to-top {
+                position: static;
+                margin: 20px auto 0;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 20px;
+            }
+            .nav-area {
+                align-items: center;
+            }
+            .policy-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header matching Home Page -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="G-TWELV-LOGO.jpeg" alt="G-TWELV Logo">
+                </a>
+            </div>
+            <div class="nav-area">
+                <div class="top-links">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="new.html">News</a>
+                    <span class="separator">/</span>
+                    <a href="career.html">Careers</a>
+                    <span class="separator">/</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="brands.html">OUR BRANDS</a></li>
+                        <li><a href="sales.html">SALES & MARKETING</a></li>
+                        <li><a href="distribution.html">DISTRIBUTION</a></li>
+                        <li class="search-icon-wrapper">
+                            <button class="search-btn" aria-label="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Terms & Conditions Main Content Area -->
+    <main class="policy-container">
+        <h1>Terms & Conditions</h1>
+        <div class="policy-date">Last Updated: September 3, 2026</div>
+
+        <p>Welcome to G-TWELV (“Company”, “we”, “us”, or “our”). These Terms & Conditions govern your access to and use of info@g-twelv.com (the “Website”).</p>
+        <p>By accessing or using this Website, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree with any part of these Terms, please do not use the Website.</p>
+
+        <h2>1. About the Website</h2>
+        <p>The Website is intended to provide general information about G-TWELV, including information about our company, activities, products, services, brands, and contact details.</p>
+        <p>The Website is primarily an informational and corporate profile website. Unless expressly stated otherwise, the Website does not constitute an online store, and no purchase or sale of products is completed through the Website.</p>
+
+        <h2>2. Use of the Website</h2>
+        <p>You may use the Website for lawful purposes and in accordance with these Terms & Conditions.</p>
+        <p>You agree not to:</p>
+        <ul>
+            <li>Use the Website for any unlawful or fraudulent purpose.</li>
+            <li>Attempt to gain unauthorized access to the Website or its systems.</li>
+            <li>Interfere with or disrupt the operation or security of the Website.</li>
+            <li>Copy, reproduce, modify, distribute, or exploit Website content without authorization.</li>
+            <li>Use the Website in a manner that could damage the Company, its reputation, or its systems.</li>
+        </ul>
+        <p>We reserve the right to restrict or terminate access to the Website where we reasonably believe these Terms have been violated.</p>
+
+        <h2>3. Website Information</h2>
+        <p>We make reasonable efforts to ensure that information published on the Website is accurate and up to date. However, information may occasionally contain errors, omissions, or outdated content.</p>
+        <p>The Company does not guarantee that all information on the Website will always be complete, accurate, current, or available.</p>
+        <p>Product descriptions, specifications, availability, services, company information, and other content may be changed or updated without prior notice.</p>
+
+        <h2>4. Products and Services</h2>
+        <p>Information about products and services displayed on the Website is provided for general informational purposes.</p>
+        <p>The inclusion of a product, service, or brand on the Website does not necessarily constitute an offer to sell or a guarantee of availability.</p>
+        <p>Any actual purchase, supply, distribution, or commercial transaction may be subject to separate agreements, quotations, invoices, contracts, or terms provided by the Company or the relevant supplier or brand owner.</p>
+
+        <h2>5. Third-Party Brands and External Links</h2>
+        <p>The Website may display or refer to brands, products, services, or companies represented, distributed, supplied, or otherwise associated with the Company.</p>
+        <p>The Website may also contain links to third-party websites, including official websites or social media pages of brands presented by the Company.</p>
+        <p>These external websites are operated independently from the Company. We are not responsible for their content, availability, security, privacy practices, terms, or policies.</p>
+        <p>Visiting an external website through a link on our Website is done at your own discretion and is subject to the terms and policies of that third party.</p>
+
+        <h2>6. Intellectual Property</h2>
+        <p>Unless otherwise stated, all content appearing on the Website, including but not limited to text, graphics, logos, images, photographs, designs, layouts, videos, icons, and other materials, is owned by or licensed to the Company and is protected by applicable intellectual property laws.</p>
+        <p>The names, logos, trademarks, and brand materials of third parties remain the property of their respective owners.</p>
+        <p>Nothing on this Website grants you any ownership or license to use the Company's or any third party's trademarks, logos, or other intellectual property without prior written authorization.</p>
+        <p>You may view and use the Website for personal or legitimate business-information purposes only. Any reproduction, redistribution, modification, or commercial use of Website content without prior written permission is prohibited.</p>
+
+        <h2>7. Contact Form</h2>
+        <p>The Website may provide a contact form through which you can submit inquiries or other information to the Company.</p>
+        <p>You agree to provide information that is accurate and not misleading.</p>
+        <p>Submitting a contact form does not create a contractual relationship between you and the Company.</p>
+        <p>We may use the information you provide to respond to your inquiry and for purposes related to your communication with us, in accordance with our Privacy Policy.</p>
+
+        <h2>8. Privacy</h2>
+        <p>Your use of the Website and submission of information through our contact form may involve the collection and processing of personal information.</p>
+        <p>Please refer to our Privacy Policy for information about how we collect, use, store, and protect personal information.</p>
+
+        <h2>9. Disclaimer</h2>
+        <p>To the maximum extent permitted by applicable law, the Website and its content are provided on an “as is” and “as available” basis.</p>
+        <p>The Company does not guarantee that:</p>
+        <ul>
+            <li>The Website will always be available or uninterrupted.</li>
+            <li>The Website will be free from errors or technical issues.</li>
+            <li>The information provided will always be complete, accurate, or current.</li>
+            <li>The Website will be free from viruses or other harmful components.</li>
+        </ul>
+        <p>Nothing in these Terms & Conditions excludes or limits any liability that cannot legally be excluded or limited under applicable law.</p>
+
+        <h2>10. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, the Company shall not be responsible for any direct, indirect, incidental, consequential, or other loss or damage arising from or related to:</p>
+        <ul>
+            <li>Your use of or inability to use the Website.</li>
+            <li>Reliance on information published on the Website.</li>
+            <li>Your use of third-party websites accessed through links on the Website.</li>
+            <li>Technical interruptions, errors, or failures affecting the Website.</li>
+        </ul>
+        <p>This provision does not exclude liability where such exclusion is prohibited by applicable law.</p>
+
+        <h2>11. Website Availability and Changes</h2>
+        <p>We reserve the right to modify, suspend, discontinue, or remove any part of the Website or its content at any time, without prior notice.</p>
+        <p>We may also update these Terms & Conditions from time to time. Any updated version will be published on this page with a revised “Last Updated” date.</p>
+        <p>Your continued use of the Website after changes are published constitutes your acceptance of the updated Terms & Conditions.</p>
+
+        <h2>12. Governing Law and Jurisdiction</h2>
+        <p>These Terms & Conditions shall be governed by and interpreted in accordance with the laws of the Lebanese Republic.</p>
+        <p>Any dispute arising out of or relating to these Terms & Conditions or your use of the Website shall be subject to the jurisdiction of the competent courts of Beirut, Lebanon, unless otherwise required by applicable law.</p>
+
+        <h2>13. Severability</h2>
+        <p>If any provision of these Terms & Conditions is found to be invalid, unlawful, or unenforceable, that provision shall be limited or removed to the extent necessary, and the remaining provisions shall continue in full force and effect.</p>
+
+        <h2>14. Contact Us</h2>
+        <p>If you have any questions regarding these Terms & Conditions, you may contact us at:</p>
+        <p>
+            <strong>G-TWELV</strong><br>
+            Address: Dbayeh, Lebanon<br>
+            Email: info@alfakirtrade.com<br>
+            Telephone: 78/ 980 434<br>
+            Website: info@g-twelv.com
+        </p>
+    </main>
+
+    <!-- Footer matching Homepage -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>KNOW US</h4>
+                <ul>
+                    <li><a href="company.html">Company</a></li>
+                    <li><a href="our-story.html">Our Story</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>OUR BRANDS</h4>
+                <ul>
+                    <li><a href="brand1.html">Brand 1</a></li>
+                    <li><a href="brand2.html">Brand 2</a></li>
+                    <li><a href="brand3.html">Brand 3</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><span>Dbayeh, Lebanon</span></li>
+                    <li><a href="mailto:info@alfakirtrade.com">info@alfakirtrade.com</a></li>
+                    <li><span>78/ 980 434</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="terms-and-condition.html">Terms & Conditions</a>
+            <span>|</span>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <span>|</span>
+            <span>Copyright &copy; 2026 G-TWELV. All rights reserved.</span>
+        </div>
+        <a href="#" class="back-to-top">&#8593;</a>
+    </footer>
+
+</body>
+</html>
