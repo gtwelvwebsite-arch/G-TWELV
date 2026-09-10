@@ -1,1 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - G-TWELV</title>
+    <style>
+        :root {
+            --color-navy: #0b2545;
+            --color-cyan: #00b4d8;
+            --color-black: #111111;
+            --color-white: #ffffff;
+            --color-grey-light: #f8f9fa;
+            --color-grey-medium: #888888;
+            --color-grey-dark: #333333;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-grey-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Top Navigation Styles (Matching Home) */
+        header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-navy);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.9rem;
+        }
+
+        .top-links a {
+            position: relative;
+            text-decoration: none;
+            color: var(--color-grey-dark);
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .top-links a:hover {
+            color: var(--color-cyan);
+        }
+
+        .top-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .top-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Privacy Policy Content Styles */
+        .policy-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 40px;
+        }
+
+        .policy-container h1 {
+            font-size: 2.2rem;
+            color: var(--color-navy);
+            margin-bottom: 10px;
+        }
+
+        .policy-date {
+            font-size: 0.9rem;
+            color: var(--color-grey-medium);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .policy-container h2 {
+            font-size: 1.3rem;
+            color: var(--color-navy);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .policy-container p {
+            margin-bottom: 15px;
+            color: #444444;
+        }
+
+        .policy-container ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #444444;
+        }
+
+        .policy-container ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer Styles (Navy Theme with Custom Mapping) */
+        .footer {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            padding: 70px 40px 30px;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-white);
+            margin-bottom: 25px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a,
+        .footer-column ul li span {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--color-cyan);
+        }
+
+        .footer-bottom-bar {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #b0c4de;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 25px;
+        }
+
+        .footer-bottom-bar a {
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-bar a:hover {
+            color: var(--color-cyan);
+        }
+
+        .back-to-top {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            background-color: var(--color-white);
+            color: var(--color-navy);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--color-cyan);
+            color: var(--color-white);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .footer-bottom-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .back-to-top {
+                position: static;
+                margin: 20px auto 0;
+            }
+            .header-container {
+                padding: 15px 20px;
+            }
+            .policy-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <header>
+        <div class="header-container">
+            <a href="home.html" class="logo">G-TWELV</a>
+            <nav class="top-links">
+                <a href="home.html">Home</a>
+                <a href="home.html#about">About Us</a>
+                <a href="home.html#brands">Our Brands</a>
+                <a href="home.html#news">News</a>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main class="policy-container">
+        <h1>Privacy Policy</h1>
+        <div class="policy-date">Last Updated: September 3, 2026</div>
+
+        <p>G-TWELV (“Company”, “we”, “us”, or “our”) respects your privacy and is committed to protecting the personal information you provide when using our website, info@g-twelv.com (the “Website”).</p>
+        <p>This Privacy Policy explains what information we may collect, how we use it, and how we protect it when you visit or interact with our Website.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>The Website is primarily an informational company-profile website. We may collect limited personal information when you voluntarily provide it through our Contact Us form.</p>
+        <p>Depending on the information requested in the form, this may include:</p>
+        <ul>
+            <li>Full name</li>
+            <li>Email address</li>
+            <li>Telephone number</li>
+            <li>Company or organization name</li>
+            <li>Any other information you choose to include in your message</li>
+        </ul>
+        <p>We may also automatically receive certain technical information when you visit the Website, such as your IP address, browser type, device type, operating system, and general information about how the Website is accessed.</p>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We may use the information you provide to:</p>
+        <ul>
+            <li>Respond to your questions, requests, or inquiries.</li>
+            <li>Communicate with you regarding our company, products, or services.</li>
+            <li>Follow up on business or commercial inquiries.</li>
+            <li>Improve our Website and services.</li>
+            <li>Maintain the security and proper operation of the Website.</li>
+            <li>Comply with applicable legal and regulatory obligations.</li>
+        </ul>
+        <p>We will not use the information submitted through the Contact Us form for unrelated purposes without a lawful basis or, where required, your consent.</p>
+
+        <h2>3. Contact Form</h2>
+        <p>When you submit information through our Contact Us form, the information is transmitted to us so that we can respond to your inquiry.</p>
+        <p>Please do not submit sensitive personal information or information that you do not wish to share through the Contact Us form.</p>
+        <p>Submitting the form does not automatically subscribe you to a marketing mailing list unless this is clearly stated on the form and you have provided the appropriate consent where required.</p>
+
+        <h2>4. Cookies and Similar Technologies</h2>
+        <p>The Website may use cookies or similar technologies to ensure that the Website functions properly and to understand how visitors use the Website.</p>
+        <p>Where applicable, cookies may be used for purposes such as:</p>
+        <ul>
+            <li>Website functionality.</li>
+            <li>Security.</li>
+            <li>Website performance and analytics.</li>
+            <li>Improving the user experience.</li>
+        </ul>
+        <p>You can manage or disable cookies through your browser settings. Disabling certain cookies may affect some Website functionality.</p>
+        <p>If the Website does not use cookies or analytics, this section should be adjusted accordingly.</p>
+
+        <h2>5. Third-Party Websites and External Links</h2>
+        <p>The Website may contain links to external websites, including websites and social media pages belonging to brands represented, presented, supplied, or associated with the Company.</p>
+        <p>Once you leave our Website and visit a third-party website, that website's own privacy policy and terms apply.</p>
+        <p>We are not responsible for the privacy practices, security, content, or policies of third-party websites.</p>
+        <p>We recommend reviewing the privacy policy of any third-party website before providing it with personal information.</p>
+
+        <h2>6. Sharing of Information</h2>
+        <p>We do not sell or rent personal information collected through the Website.</p>
+        <p>We may share personal information with trusted service providers where reasonably necessary to operate the Website, process communications, maintain technical infrastructure, or provide related services.</p>
+        <p>We may also disclose information where required by applicable law, regulation, legal process, or a lawful request from a competent authority.</p>
+
+        <h2>7. Data Security</h2>
+        <p>We take reasonable technical and organizational measures to protect personal information against unauthorized access, loss, misuse, alteration, or disclosure.</p>
+        <p>However, no method of transmission over the Internet or method of electronic storage can be guaranteed to be completely secure.</p>
+
+        <h2>8. Data Retention</h2>
+        <p>We retain personal information only for as long as reasonably necessary to fulfill the purposes for which it was collected, including responding to inquiries, maintaining business records, resolving disputes, and complying with legal obligations.</p>
+        <p>When personal information is no longer reasonably required, we may delete or securely dispose of it in accordance with our practices and applicable law.</p>
+
+        <h2>9. Your Rights</h2>
+        <p>Depending on applicable Lebanese law and the circumstances of the processing, you may have rights concerning your personal information, including the right to request access to, correction of, or deletion of certain personal information.</p>
+        <p>You may contact us using the details provided below if you have questions about your personal information or wish to make a privacy-related request.</p>
+        <p>We may need to verify your identity before responding to certain requests.</p>
+
+        <h2>10. Children's Privacy</h2>
+        <p>The Website is not specifically directed toward children, and we do not knowingly request or collect personal information from children through the Website.</p>
+        <p>If you believe that a child has provided personal information to us through the Website, please contact us so that we can review and, where appropriate, delete the information.</p>
+
+        <h2>11. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes to the Website, our practices, or applicable legal requirements.</p>
+        <p>Any changes will be published on this page, together with an updated “Last Updated” date.</p>
+        <p>We encourage you to review this Privacy Policy periodically.</p>
+
+        <h2>12. Contact Us</h2>
+        <p>If you have questions, concerns, or requests regarding this Privacy Policy or the handling of your personal information, you may contact us at:</p>
+        <p>
+            <strong>G-TWELV</strong><br>
+            Address: Dbayeh, Lebanon<br>
+            Email: info@alfakirtrade.com<br>
+            Telephone: 78/ 980 434<br>
+            Website: info@g-twelv.com
+        </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>KNOW US</h4>
+                <ul>
+                    <li><a href="home.html#about">Company</a></li>
+                    <li><a href="home.html#about">Our Story</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>OUR BRANDS</h4>
+                <ul>
+                    <li><a href="home.html#brands">Brand 1</a></li>
+                    <li><a href="home.html#brands">Brand 2</a></li>
+                    <li><a href="home.html#brands">Brand 3</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><span>Dbayeh, Lebanon</span></li>
+                    <li><a href="mailto:info@alfakirtrade.com">info@alfakirtrade.com</a></li>
+                    <li><span>78/ 980 434</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="#terms">Terms & Conditions</a>
+            <span>|</span>
+            <a href="#cookies">Cookie Policy</a>
+            <span>|</span>
+            <span>Copyright &copy; 2026 G-TWELV. All rights reserved.</span>
+        </div>
+        <a href="#" class="back-to-top">&#8593;</a>
+    </footer>
+
+</body>
+</html>
