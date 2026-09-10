@@ -27,35 +27,34 @@
             line-height: 1.6;
         }
 
-
         a {
             text-decoration: none;
             color: inherit;
             transition: color 0.3s ease;
         }
 
-        ul {
-            list-style: none;
-        }
-
-        
+        /* Main Header Layout Matching Homepage */
         .main-header {
             background-color: var(--color-white);
-            border-bottom: 1px solid var(--color-grey-light);
-            padding: 20px 40px;
+            border-bottom: 1px solid #eaeaea;
             width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo-area img {
-            max-height: 80px;
+            max-height: 60px;
+            width: auto;
             display: block;
         }
 
@@ -63,65 +62,85 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 15px;
+            gap: 10px;
         }
 
-       .top-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    color: var(--color-grey-medium);
-}
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--color-grey-medium);
+        }
 
-.top-links a {
-    position: relative;
-    transition: color 0.3s ease;
-}
+        .top-links a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
 
-.top-links a:hover {
-    color: var(--color-cyan);
-}
+        .top-links a:hover {
+            color: var(--color-cyan);
+        }
 
-.top-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--color-cyan);
-    transition: width 0.3s ease;
-}
+        .top-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
 
-.top-links a:hover::after {
-    width: 100%;
-}
+        .top-links a:hover::after {
+            width: 100%;
+        }
 
         .separator {
-            color: var(--color-grey-light);
+            color: #ddd;
         }
 
         .main-menu ul {
             display: flex;
             align-items: center;
             gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         .main-menu ul li a {
             font-size: 0.9rem;
-            color: var(--color-grey-dark);
-            font-weight: 500;
+            color: var(--color-navy);
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s ease;
         }
 
         .main-menu ul li a:hover {
-            color: var(--color-yellow);
+            color: var(--color-cyan);
+        }
+
+        .main-menu ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .main-menu ul li a:hover::after {
+            width: 100%;
         }
 
         .search-icon-wrapper {
-            border-left: 1px solid var(--color-grey-light);
+            border-left: 1px solid #ddd;
             padding-left: 20px;
             display: flex;
             align-items: center;
@@ -131,7 +150,7 @@
             background: none;
             border: none;
             cursor: pointer;
-            color: var(--color-grey-dark);
+            color: var(--color-navy);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -139,7 +158,7 @@
         }
 
         .search-btn:hover {
-            color: var(--color-yellow);
+            color: var(--color-cyan);
         }
 
         .search-btn svg {
@@ -182,6 +201,7 @@
         .policy-container ul {
             margin-bottom: 20px;
             padding-left: 20px;
+            list-style: disc;
             color: #444444;
         }
 
@@ -296,11 +316,13 @@
                 position: static;
                 margin: 20px auto 0;
             }
-            .header-top, .header-main {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
                 padding: 15px 20px;
             }
-            .header-main {
-                justify-content: center;
+            .nav-area {
+                align-items: center;
             }
             .policy-container {
                 padding: 0 20px;
@@ -310,6 +332,7 @@
 </head>
 <body>
 
+    <!-- Main Header matching Home Page -->
     <header class="main-header">
         <div class="header-container">
             <div class="logo-area">
@@ -345,6 +368,7 @@
             </div>
         </div>
     </header>
+
     <!-- Privacy Policy Main Content Area -->
     <main class="policy-container">
         <h1>Privacy Policy</h1>
@@ -444,18 +468,18 @@
             <div class="footer-column">
                 <h4>KNOW US</h4>
                 <ul>
-                    <li><a href="home.html#about">Company</a></li>
-                    <li><a href="home.html#about">Our Story</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="index.html#about">Company</a></li>
+                    <li><a href="index.html#about">Our Story</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                    <li><a href="team.html">Our Team</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>OUR BRANDS</h4>
                 <ul>
-                    <li><a href="home.html#brands">Brand 1</a></li>
-                    <li><a href="home.html#brands">Brand 2</a></li>
-                    <li><a href="home.html#brands">Brand 3</a></li>
+                    <li><a href="index.html#brands">Brand 1</a></li>
+                    <li><a href="index.html#brands">Brand 2</a></li>
+                    <li><a href="index.html#brands">Brand 3</a></li>
                 </ul>
             </div>
             <div class="footer-column">
