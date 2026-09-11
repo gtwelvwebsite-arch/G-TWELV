@@ -1016,6 +1016,73 @@
         font-size: 1.45rem;
     }
 }
+
+.main-menu ul li {
+            position: relative;
+        }
+
+        .main-menu ul li > a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--color-white);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eaeaea;
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu li {
+            width: 100%;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            color: var(--color-navy);
+            text-transform: uppercase;
+            font-weight: 600;
+            display: block;
+            white-space: nowrap;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .dropdown-menu li a::after {
+            display: none !important;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: var(--color-grey-light);
+            color: var(--color-cyan);
+        }
         
     </style>
 </head>
@@ -1042,8 +1109,16 @@
                     <ul>
                         <li><a href="about.html">ABOUT US</a></li>
                         <li><a href="brands.html">OUR BRANDS</a></li>
-                        <li><a href="sales.html">SALES & MARKETING</a></li>
-                        <li><a href="distribution.html">DISTRIBUTION</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">
+                                OUR SERVICES <span class="dropdown-arrow">&#9660;</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="sales.html">Sales & Marketing</a></li>
+                                <li><a href="distribution.html">Distribution</a></li>
+                                <li><a href="logistics.html">Logistics</a></li>
+                            </ul>
+                        </li>
                         <li class="search-icon-wrapper">
                             <button class="search-btn" aria-label="Search">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
