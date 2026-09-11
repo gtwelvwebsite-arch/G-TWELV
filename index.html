@@ -452,6 +452,142 @@
         margin: 20px auto 0;
     }
 }
+
+.home-brands-section {
+        padding: 80px 40px;
+        background-color: var(--color-grey-light, #f8f9fa);
+    }
+
+    .home-brands-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .home-brands-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .home-brands-header h2 {
+        font-size: 2.2rem;
+        color: var(--color-navy, #0b2545);
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .home-brands-header p {
+        color: #555555;
+        font-size: 1.05rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .home-brands-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .home-brand-card {
+        background-color: var(--color-white, #ffffff);
+        border: 1px solid #eaeaea;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .home-brand-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .home-brand-logo-box {
+        flex: 0 0 140px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f1f3f5;
+        border: 1px solid #e2e8f0;
+        padding: 10px;
+    }
+
+    .home-brand-logo-box img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .home-brand-info h3 {
+        font-size: 1.3rem;
+        color: var(--color-navy, #0b2545);
+        margin: 0 0 8px 0;
+    }
+
+    .home-brand-info p {
+        font-size: 0.9rem;
+        color: #666666;
+        margin: 0 0 15px 0;
+        line-height: 1.5;
+    }
+
+    .home-brand-btn {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--color-cyan, #00b4d8);
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+    }
+
+    .home-brand-btn:hover {
+        color: var(--color-navy, #0b2545);
+    }
+
+    .home-brands-footer-link {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .view-all-brands-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--color-navy, #0b2545);
+        color: var(--color-white, #ffffff);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        transition: background-color 0.3s ease;
+    }
+
+    .view-all-brands-btn:hover {
+        background-color: var(--color-cyan, #00b4d8);
+        color: var(--color-white, #ffffff);
+    }
+
+    @media (max-width: 768px) {
+        .home-brands-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .home-brand-card {
+            flex-direction: column;
+            text-align: center;
+        }
+        .home-brand-logo-box {
+            width: 100%;
+            height: 120px;
+        }
+        .home-brands-section {
+            padding: 50px 20px;
+        }
+    }
         
     </style>
 </head>
@@ -534,6 +670,45 @@
     </div>
 </section>
 
+    
+<section class="home-brands-section">
+    <div class="home-brands-container">
+        <div class="home-brands-header">
+            <h2>OUR BRANDS</h2>
+            <p>Discover the exceptional names we proudly represent and distribute across the market.</p>
+        </div>
+
+        <div class="home-brands-grid">
+            <!-- Brand Item 1 -->
+            <div class="home-brand-card">
+                <div class="home-brand-logo-box">
+                    <img src="brand1-logo.png" alt="Brand 1 Logo">
+                </div>
+                <div class="home-brand-info">
+                    <h3>Brand One</h3>
+                    <p>Brief description highlighting what Brand One offers, showcasing its quality and market presence through G-TWELV.</p>
+                    <a href="brand1.html" class="home-brand-btn">Explore Brand</a>
+                </div>
+            </div>
+
+            <!-- Brand Item 2 -->
+            <div class="home-brand-card">
+                <div class="home-brand-logo-box">
+                    <img src="brand2-logo.png" alt="Brand 2 Logo">
+                </div>
+                <div class="home-brand-info">
+                    <h3>Brand Two</h3>
+                    <p>Brief description highlighting what Brand Two offers, showcasing its quality and market presence through G-TWELV.</p>
+                    <a href="brand2.html" class="home-brand-btn">Explore Brand</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-brands-footer-link">
+            <a href="brands.html" class="view-all-brands-btn">View All Brands &rarr;</a>
+        </div>
+    </div>
+</section>
 
     <footer class="footer">
     <div class="footer-container">
