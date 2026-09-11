@@ -1,1 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - G-TWELV</title>
+    <style>
+        :root {
+            --color-navy: #0b2545;
+            --color-cyan: #00b4d8;
+            --color-black: #111111;
+            --color-white: #ffffff;
+            --color-grey-light: #f8f9fa;
+            --color-grey-medium: #888888;
+            --color-grey-dark: #333333;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-grey-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        /* Main Header Layout Matching Homepage */
+        .main-header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid #eaeaea;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area img {
+            max-height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-area {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--color-grey-medium);
+        }
+
+        .top-links a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .top-links a:hover {
+            color: var(--color-cyan);
+        }
+
+        .top-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .top-links a:hover::after {
+            width: 100%;
+        }
+
+        .separator {
+            color: #ddd;
+        }
+
+        .main-menu ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-menu ul li a {
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .main-menu ul li a:hover {
+            color: var(--color-cyan);
+        }
+
+        .main-menu ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .main-menu ul li a:hover::after {
+            width: 100%;
+        }
+
+        .search-icon-wrapper {
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--color-cyan);
+        }
+
+        .search-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            padding: 70px 40px 30px;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-white);
+            margin-bottom: 25px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a,
+        .footer-column ul li span {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--color-cyan);
+        }
+
+        .footer-bottom-bar {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #b0c4de;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 25px;
+        }
+
+        .footer-bottom-bar a {
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-bar a:hover {
+            color: var(--color-cyan);
+        }
+
+        .back-to-top {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            background-color: var(--color-white);
+            color: var(--color-navy);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--color-cyan);
+            color: var(--color-white);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .footer-bottom-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .back-to-top {
+                position: static;
+                margin: 20px auto 0;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 20px;
+            }
+            .nav-area {
+                align-items: center;
+            }
+            .policy-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header matching Home Page -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="G-TWELV-LOGO.jpeg" alt="G-TWELV Logo">
+                </a>
+            </div>
+            <div class="nav-area">
+                <div class="top-links">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="news.html">News</a>
+                    <span class="separator">/</span>
+                    <a href="career.html">Careers</a>
+                    <span class="separator">/</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="brands.html">OUR BRANDS</a></li>
+                        <li><a href="sales.html">SALES & MARKETING</a></li>
+                        <li><a href="distribution.html">DISTRIBUTION</a></li>
+                        <li class="search-icon-wrapper">
+                            <button class="search-btn" aria-label="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+        
+            <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>KNOW US</h4>
+                <ul>
+                    <li><a href="company.html">Company</a></li>
+                    <li><a href="our-story.html">Our Story</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>OUR BRANDS</h4>
+                <ul>
+                    <li><a href="brand1.html">Brand 1</a></li>
+                    <li><a href="brand2.html">Brand 2</a></li>
+                    <li><a href="brand3.html">Brand 3</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><span>Dbayeh, Lebanon</span></li>
+                    <li><a href="mailto:info@alfakirtrade.com">info@alfakirtrade.com</a></li>
+                    <li><span>78/ 980 434</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="terms-and-condition.html">Terms & Conditions</a>
+            <span>|</span>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <span>|</span>
+            <span>Copyright &copy; 2026 G-TWELV. All rights reserved.</span>
+        </div>
+        <a href="#" class="back-to-top">&#8593;</a>
+    </footer>
+
+</body>
+</html>
