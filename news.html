@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - G-TWELV</title>
+    <style>
+        :root {
+            --color-navy: #0b2545;
+            --color-cyan: #00b4d8;
+            --color-black: #111111;
+            --color-white: #ffffff;
+            --color-grey-light: #f8f9fa;
+            --color-grey-medium: #888888;
+            --color-grey-dark: #333333;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-grey-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        /* Main Header Layout Matching Homepage */
+        .main-header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid #eaeaea;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area img {
+            max-height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-area {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--color-grey-medium);
+        }
+
+        .top-links a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .top-links a:hover {
+            color: var(--color-cyan);
+        }
+
+        .top-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .top-links a:hover::after {
+            width: 100%;
+        }
+
+        .separator {
+            color: #ddd;
+        }
+
+        .main-menu ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-menu ul li a {
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .main-menu ul li a:hover {
+            color: var(--color-cyan);
+        }
+
+        .main-menu ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--color-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .main-menu ul li a:hover::after {
+            width: 100%;
+        }
+
+        .search-icon-wrapper {
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--color-cyan);
+        }
+
+        .search-btn svg {
+            width: 18px;
+            height: 18px;
+        }
