@@ -166,6 +166,165 @@
             height: 18px;
         }
 
+        .footer {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            padding: 70px 40px 30px;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-white);
+            margin-bottom: 25px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a,
+        .footer-column ul li span {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--color-cyan);
+        }
+
+        .footer-bottom-bar {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #b0c4de;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 25px;
+        }
+
+        .footer-bottom-bar a {
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-bar a:hover {
+            color: var(--color-cyan);
+        }
+
+        .back-to-top {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            background-color: var(--color-white);
+            color: var(--color-navy);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--color-cyan);
+            color: var(--color-white);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .footer-bottom-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .back-to-top {
+                position: static;
+                margin: 20px auto 0;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 20px;
+            }
+            .nav-area {
+                align-items: center;
+            }
+            .policy-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header matching Home Page -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="G-TWELV-LOGO.jpeg" alt="G-TWELV Logo">
+                </a>
+            </div>
+            <div class="nav-area">
+                <div class="top-links">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="new.html">News</a>
+                    <span class="separator">/</span>
+                    <a href="career.html">Careers</a>
+                    <span class="separator">/</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="brands.html">OUR BRANDS</a></li>
+                        <li><a href="sales.html">SALES & MARKETING</a></li>
+                        <li><a href="distribution.html">DISTRIBUTION</a></li>
+                        <li class="search-icon-wrapper">
+                            <button class="search-btn" aria-label="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+        
             <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
