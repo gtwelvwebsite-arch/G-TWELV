@@ -284,6 +284,97 @@
                 padding: 0 20px;
             }
         }
+
+.main-menu ul li.dropdown {
+            position: relative;
+        }
+
+        .main-menu ul li.dropdown > span.dropdown-trigger {
+            font-size: 0.9rem;
+            color: var(--color-navy, #0b2545);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .main-menu ul li.dropdown:hover > span.dropdown-trigger {
+            color: var(--color-cyan, #00b4d8);
+        }
+
+        .main-menu ul li.dropdown > span.dropdown-trigger::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--color-cyan, #00b4d8);
+            transition: width 0.3s ease;
+        }
+
+        .main-menu ul li.dropdown:hover > span.dropdown-trigger::after {
+            width: 100%;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .main-menu ul li.dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--color-white, #ffffff);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eaeaea;
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            min-width: 200px;
+            z-index: 1000;
+        }
+
+        .main-menu ul li.dropdown:hover .dropdown-menu {
+            display: block !important;
+        }
+
+        .main-menu ul li.dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu li {
+            width: 100%;
+            display: block !important;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px 20px !important;
+            font-size: 0.85rem !important;
+            color: var(--color-navy, #0b2545) !important;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: block !important;
+            white-space: nowrap;
+            background: none !important;
+        }
+
+        .dropdown-menu li a::after {
+            display: none !important;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: var(--color-grey-light, #f8f9fa) !important;
+            color: var(--color-cyan, #00b4d8) !important;
+        }
+        
     </style>
 </head>
 <body>
@@ -306,21 +397,32 @@
                     <span class="separator">/</span>
                     <a href="contact.html">Contact Us</a>
                 </div>
-                <nav class="main-menu">
-                    <ul>
-                        <li><a href="about.html">ABOUT US</a></li>
-                        <li><a href="brands.html">OUR BRANDS</a></li>
-                        <li><a href="sales.html">SALES & MARKETING</a></li>
-                        <li><a href="distribution.html">DISTRIBUTION</a></li>
-                        <li class="search-icon-wrapper">
-                            <button class="search-btn" aria-label="Search">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                                </svg>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
+               <nav class="main-menu">
+    <ul>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="brands.html">OUR BRANDS</a></li>
+        
+        <!-- Dropdown Container -->
+        <li class="dropdown">
+            <span class="dropdown-trigger">
+                OUR SERVICES <span class="dropdown-arrow">&#9660;</span>
+            </span>
+            <ul class="dropdown-menu">
+                <li><a href="sales.html">Sales & Marketing</a></li>
+                <li><a href="distribution.html">Distribution</a></li>
+                <li><a href="logistics.html">Logistics</a></li>
+            </ul>
+        </li>
+
+        <li class="search-icon-wrapper">
+            <button class="search-btn" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </button>
+        </li>
+    </ul>
+</nav>
             </div>
         </div>
     </header>
