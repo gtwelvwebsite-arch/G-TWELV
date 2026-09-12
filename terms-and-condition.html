@@ -334,7 +334,7 @@
 
         .main-menu ul li.dropdown > span.dropdown-trigger {
             font-size: 0.9rem;
-            color: var(--color-navy);
+            color: var(--color-navy, #0b2545);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -347,7 +347,7 @@
         }
 
         .main-menu ul li.dropdown:hover > span.dropdown-trigger {
-            color: var(--color-cyan);
+            color: var(--color-cyan, #00b4d8);
         }
 
         .main-menu ul li.dropdown > span.dropdown-trigger::after {
@@ -357,7 +357,7 @@
             height: 2px;
             bottom: -6px;
             left: 0;
-            background-color: var(--color-cyan);
+            background-color: var(--color-cyan, #00b4d8);
             transition: width 0.3s ease;
         }
 
@@ -375,9 +375,9 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: var(--color-white, #ffffff);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid #eaeaea;
+            background-color: var(--color-black, #111111);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid #222222;
             list-style: none;
             padding: 10px 0;
             margin: 0;
@@ -401,7 +401,7 @@
         .dropdown-menu li a {
             padding: 10px 20px !important;
             font-size: 0.85rem !important;
-            color: var(--color-navy, #0b2545) !important;
+            color: var(--color-white, #ffffff) !important;
             text-transform: uppercase;
             font-weight: 600;
             display: block !important;
@@ -414,10 +414,10 @@
         }
 
         .dropdown-menu li a:hover {
-            background-color: var(--color-grey-light, #f8f9fa) !important;
+            background-color: var(--color-navy, #0b2545) !important;
             color: var(--color-cyan, #00b4d8) !important;
         }
-            
+           
         }
     </style>
 </head>
