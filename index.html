@@ -1290,6 +1290,38 @@ setInterval(() => {
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add('active');
 }, 5000);
+
+const searchBtn = document.querySelector('.search-btn');
+    const searchModal = document.getElementById('searchModal');
+    const closeSearchBtn = document.getElementById('closeSearchBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchBtn && searchModal) {
+        searchBtn.addEventListener('click', () => {
+            searchModal.style.display = 'flex';
+            if (searchInput) searchInput.focus();
+        });
+
+        if (closeSearchBtn) {
+            closeSearchBtn.addEventListener('click', () => {
+                searchModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === searchModal) {
+                searchModal.style.display = 'none';
+            }
+        });
+    }
+
+    function handleSearch(event) {
+        event.preventDefault();
+        const query = searchInput ? searchInput.value.trim() : '';
+        if (!query) return;
+        alert(`You searched for: "${query}"`);
+        searchModal.style.display = 'none';
+        
     </script>
 
 
