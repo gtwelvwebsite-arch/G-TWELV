@@ -1108,6 +1108,74 @@
             background-color: var(--color-grey-light, #f8f9fa) !important;
             color: var(--color-cyan, #00b4d8) !important;
         }
+
+
+        /* Sliding Search Bar Styles */
+        .sliding-search-container {
+            max-height: 0;
+            overflow: hidden;
+            background-color: var(--color-grey-light, #f8f9fa);
+            border-bottom: 0px solid #eaeaea;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            width: 100%;
+        }
+
+        .sliding-search-container.active {
+            max-height: 100px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .sliding-search-container form {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            padding: 0 40px;
+        }
+
+        .sliding-search-container input {
+            flex: 1;
+            padding: 10px 15px;
+            font-size: 0.95rem;
+            border: 1px solid #ccc;
+            outline: none;
+            background: var(--color-white, #ffffff);
+            color: var(--color-grey-dark, #333333);
+        }
+
+        .sliding-search-container input:focus {
+            border-color: var(--color-cyan, #00b4d8);
+        }
+
+        .search-submit-btn {
+            background-color: var(--color-navy, #0b2545);
+            color: var(--color-white, #ffffff);
+            border: none;
+            padding: 0 20px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-submit-btn:hover {
+            background-color: var(--color-cyan, #00b4d8);
+        }
+
+        .close-search {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-grey-dark, #333333);
+            padding: 0 10px;
+        }
+
+        .close-search:hover {
+            color: var(--color-cyan, #00b4d8);
+        }
         
     </style>
 </head>
@@ -1147,7 +1215,13 @@
             </ul>
         </li>
 
-
+<div id="slidingSearch" class="sliding-search-container">
+    <form id="searchForm" onsubmit="handleSearch(event)">
+        <input type="text" id="searchInput" placeholder="Type what you are looking for..." autocomplete="off">
+        <button type="submit" class="search-submit-btn">Search</button>
+        <button type="button" id="closeSearchBtn" class="close-search">&times;</button>
+    </form>
+</div>
         
         <li class="search-icon-wrapper">
             <button class="search-btn" aria-label="Search">
@@ -1294,6 +1368,69 @@ setInterval(() => {
 }, 5000);
 
 
+        const searchBtn = document.querySelector('.search-btn');
+    const searchModal = document.getElementById('searchModal');
+    const closeSearchBtn = document.getElementById('closeSearchBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchBtn && searchModal) {
+        searchBtn.addEventListener('click', () => {
+            searchModal.style.display = 'flex';
+            if (searchInput) searchInput.focus();
+        });
+
+        if (closeSearchBtn) {
+            closeSearchBtn.addEventListener('click', () => {
+                searchModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === searchModal) {
+                searchModal.style.display = 'none';
+            }
+        });
+    }
+
+    function handleSearch(event) {
+        event.preventDefault();
+        const query = searchInput ? searchInput.value.trim() : '';
+        if (!query) return;
+        alert(`You searched for: "${query}"`);
+        searchModal.style.display = 'none';
+    }
+
+
+<script>
+    const searchBtn = document.querySelector('.search-btn');
+    const slidingSearch = document.getElementById('slidingSearch');
+    const closeSearchBtn = document.getElementById('closeSearchBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchBtn && slidingSearch) {
+        searchBtn.addEventListener('click', () => {
+            slidingSearch.classList.toggle('active');
+            if (slidingSearch.classList.contains('active') && searchInput) {
+                searchInput.focus();
+            }
+        });
+
+        if (closeSearchBtn) {
+            closeSearchBtn.addEventListener('click', () => {
+                slidingSearch.classList.remove('active');
+            });
+        }
+    }
+
+    function handleSearch(event) {
+        event.preventDefault();
+        const query = searchInput ? searchInput.value.trim() : '';
+        if (!query) return;
+        alert(`You searched for: "${query}"`);
+        slidingSearch.classList.remove('active');
+    }
+</script>
+        
     </script>
 
 
