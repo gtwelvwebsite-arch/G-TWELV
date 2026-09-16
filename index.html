@@ -1147,6 +1147,14 @@
             </ul>
         </li>
 
+<div id="slidingSearch" class="sliding-search-container">
+    <form id="searchForm" onsubmit="handleSearch(event)">
+        <input type="text" id="searchInput" placeholder="Type what you are looking for..." autocomplete="off">
+        <button type="submit" class="search-submit-btn">Search</button>
+        <button type="button" id="closeSearchBtn" class="close-search">&times;</button>
+    </form>
+</div>
+        
         <li class="search-icon-wrapper">
             <button class="search-btn" aria-label="Search">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
