@@ -1109,6 +1109,124 @@
             color: var(--color-cyan, #00b4d8) !important;
         }
 
+
+
+        .team-section {
+            padding: 80px 40px;
+            background-color: var(--color-white, #ffffff);
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .team-header h2 {
+            font-size: 2.2rem;
+            color: var(--color-navy, #0b2545);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-header p {
+            color: #555555;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-content: center;
+        }
+
+        /* Automatically centers the 4th and 5th card nicely in a 3-column layout */
+        .team-card:nth-child(4) {
+            grid-column: 1 / 2;
+            margin-left: 50%;
+        }
+        .team-card:nth-child(5) {
+            grid-column: 2 / 3;
+            margin-left: 50%;
+        }
+
+        .team-card {
+            background-color: var(--color-white, #ffffff);
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 30px 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .team-img-box {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--color-cyan, #00b4d8);
+        }
+
+        .team-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info h3 {
+            font-size: 1.2rem;
+            color: var(--color-navy, #0b2545);
+            margin: 0 0 5px 0;
+        }
+
+        .team-role {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-cyan, #00b4d8);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .team-info p {
+            font-size: 0.9rem;
+            color: #666666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Responsive adjustment for smaller screens */
+        @media (max-width: 900px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .team-card:nth-child(4), .team-card:nth-child(5) {
+                grid-column: auto;
+                margin-left: 0;
+            }
+        }
+        @media (max-width: 600px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
         
     </style>
 </head>
@@ -1240,6 +1358,78 @@
 
         <div class="home-brands-footer-link">
             <a href="brands.html" class="view-all-brands-btn">View All Brands &rarr;</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Meet the Team Section -->
+<section class="team-section">
+    <div class="team-container">
+        <div class="team-header">
+            <h2>Meet Our Team</h2>
+            <p>The dedicated professionals driving our vision forward.</p>
+        </div>
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <div class="team-img-box">
+                    <img src="path-to-image-1.jpg" alt="Team Member">
+                </div>
+                <div class="team-info">
+                    <h3>Name Here</h3>
+                    <span class="team-role">Position / Title</span>
+                    <p>Short bio or description goes here.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <div class="team-img-box">
+                    <img src="path-to-image-2.jpg" alt="Team Member">
+                </div>
+                <div class="team-info">
+                    <h3>Name Here</h3>
+                    <span class="team-role">Position / Title</span>
+                    <p>Short bio or description goes here.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <div class="team-img-box">
+                    <img src="path-to-image-3.jpg" alt="Team Member">
+                </div>
+                <div class="team-info">
+                    <h3>Name Here</h3>
+                    <span class="team-role">Position / Title</span>
+                    <p>Short bio or description goes here.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-card">
+                <div class="team-img-box">
+                    <img src="path-to-image-4.jpg" alt="Team Member">
+                </div>
+                <div class="team-info">
+                    <h3>Name Here</h3>
+                    <span class="team-role">Position / Title</span>
+                    <p>Short bio or description goes here.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="team-card">
+                <div class="team-img-box">
+                    <img src="path-to-image-5.jpg" alt="Team Member">
+                </div>
+                <div class="team-info">
+                    <h3>Name Here</h3>
+                    <span class="team-role">Position / Title</span>
+                    <p>Short bio or description goes here.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
