@@ -1109,9 +1109,9 @@
             color: var(--color-cyan, #00b4d8) !important;
         }
 
+        /* Meet the teamm section */
 
-
-        .team-section {
+.team-section {
             padding: 80px 40px;
             background-color: var(--color-white, #ffffff);
         }
@@ -1143,22 +1143,12 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 30px;
-            justify-content: center;
-        }
-
-        /* Automatically centers the 4th and 5th card nicely in a 3-column layout */
-        .team-card:nth-child(4) {
-            grid-column: 1 / 2;
-            margin-left: 50%;
-        }
-        .team-card:nth-child(5) {
-            grid-column: 2 / 3;
-            margin-left: 50%;
         }
 
         .team-card {
+            grid-column: span 2; /* Top 3 cards each take 2 columns */
             background-color: var(--color-white, #ffffff);
             border: 1px solid #eaeaea;
             border-radius: 8px;
@@ -1167,6 +1157,16 @@
             padding: 30px 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Bottom 2 cards match the exact same size and sit centered */
+        .team-card:nth-child(4) {
+            grid-column: 2 / span 2;
+            margin-left: 0;
+        }
+        .team-card:nth-child(5) {
+            grid-column: 4 / span 2;
+            margin-left: 0;
         }
 
         .team-card:hover {
@@ -1195,22 +1195,24 @@
             margin: 0 0 5px 0;
         }
 
-        .team-role {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--color-cyan, #00b4d8);
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
+    .team-role {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--color-cyan, #00b4d8);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
+    }
 
-        .team-info p {
-            font-size: 0.9rem;
-            color: #666666;
-            margin: 0;
-            line-height: 1.5;
-        }
+    .team-info p {
+        font-size: 0.9rem;
+        color: #666666;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+
 
         /* Responsive adjustment for smaller screens */
         @media (max-width: 900px) {
