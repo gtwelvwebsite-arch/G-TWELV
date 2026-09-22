@@ -1212,7 +1212,117 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Become a Partner */
         
+.partner-section {
+    padding: 100px 40px;
+    background-color: #f8f9fa; /* Light background contrast for the form */
+}
+
+.partner-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.partner-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.partner-header h2 {
+    font-size: 2.2rem;
+    color: var(--color-navy, #0b2545);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.partner-header p {
+    color: #555555;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.partner-form {
+    background-color: var(--color-white, #ffffff);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-navy, #0b2545);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--color-black, #111111);
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-cyan, #00b4d8);
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
+}
+
+.partner-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-navy, #0b2545);
+    color: var(--color-white, #ffffff);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.partner-submit-btn:hover {
+    background-color: var(--color-cyan, #00b4d8);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .partner-form {
+        padding: 25px 20px;
+    }
+}
+
         
     </style>
 </head>
@@ -1435,6 +1545,51 @@
     </div>
 </section>
 
+    <section class="partner-section" id="partner">
+    <div class="partner-container">
+        <div class="partner-header">
+            <span class="section-tag">Collaborate With Us</span>
+            <h2>Become a Partner</h2>
+            <p>Join our global network of brands and distribution partners. Fill out the form below to connect with our team.</p>
+        </div>
+        
+        <form class="partner-form" action="#" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" placeholder="Enter your country">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your brand or proposal..." required></textarea>
+            </div>
+
+            <button type="submit" class="partner-submit-btn">Submit Proposal</button>
+        </form>
+    </div>
+</section>
             
         </div>
     </div>
