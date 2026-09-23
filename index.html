@@ -1462,6 +1462,33 @@
     }
 }
 
+
+.news-btn-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.view-all-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: transparent;
+    color: var(--color-navy, #0b2545);
+    border: 2px solid var(--color-navy, #0b2545);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+    background-color: var(--color-navy, #0b2545);
+    color: var(--color-white, #ffffff);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(11, 37, 69, 0.15);
+}
         
     </style>
 </head>
@@ -1792,6 +1819,10 @@
             </article>
         </div>
     </div>
+<div class="news-btn-container">
+    <a href="news.html" class="view-all-btn">View All News</a>
+</div>
+        
 </section>
 
     <footer class="footer">
