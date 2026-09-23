@@ -1323,6 +1323,145 @@
     }
 }
 
+        .news-section {
+    padding: 100px 40px;
+    background-color: var(--color-white, #ffffff);
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.news-header h2 {
+    font-size: 2.2rem;
+    color: var(--color-navy, #0b2545);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-header p {
+    color: #555555;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.news-img-box {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-img-box img {
+    transform: scale(1.05);
+}
+
+.news-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--color-navy, #0b2545);
+    color: var(--color-white, #ffffff);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: var(--color-cyan, #00b4d8);
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.news-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-navy, #0b2545);
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+.news-content p {
+    font-size: 0.95rem;
+    color: #666666;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-navy, #0b2545);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.read-more:hover {
+    color: var(--color-cyan, #00b4d8);
+}
+
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
         
     </style>
 </head>
@@ -1599,7 +1738,61 @@
         </form>
     </div>
 </section>
-   
+
+
+    <section class="news-section" id="news">
+    <div class="news-container">
+        <div class="news-header">
+            <span class="section-tag">Latest Updates</span>
+            <h2>News & Insights</h2>
+            <p>Stay up to date with the latest announcements, brand milestones, and industry news from G-TWELV.</p>
+        </div>
+
+        <div class="news-grid">
+            <!-- Article Card 1 -->
+            <article class="news-card">
+                <div class="news-img-box">
+                    <img src="Assets/Images/G-12/aboutus.jpg" alt="News Image">
+                    <span class="news-category">Announcement</span>
+                </div>
+                <div class="news-content">
+                    <span class="news-date">September 23, 2026</span>
+                    <h3>Article Headline Goes Here</h3>
+                    <p>A brief excerpt or summary of the article goes here to give readers a quick preview...</p>
+                    <a href="#" class="read-more">Read More &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Article Card 2 -->
+            <article class="news-card">
+                <div class="news-img-box">
+                    <img src="Assets/Images/G-12/aboutus.jpg" alt="News Image">
+                    <span class="news-category">Partnership</span>
+                </div>
+                <div class="news-content">
+                    <span class="news-date">September 20, 2026</span>
+                    <h3>Article Headline Goes Here</h3>
+                    <p>A brief excerpt or summary of the article goes here to give readers a quick preview...</p>
+                    <a href="#" class="read-more">Read More &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Article Card 3 -->
+            <article class="news-card">
+                <div class="news-img-box">
+                    <img src="Assets/Images/G-12/aboutus.jpg" alt="News Image">
+                    <span class="news-category">Milestone</span>
+                </div>
+                <div class="news-content">
+                    <span class="news-date">September 15, 2026</span>
+                    <h3>Article Headline Goes Here</h3>
+                    <p>A brief excerpt or summary of the article goes here to give readers a quick preview...</p>
+                    <a href="#" class="read-more">Read More &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
     <footer class="footer">
     <div class="footer-container">
