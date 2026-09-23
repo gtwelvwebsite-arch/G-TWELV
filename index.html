@@ -1324,6 +1324,130 @@
     }
 }
 
+        /* Partner Section Base */
+.partner-section {
+    padding: 100px 40px;
+    background-color: #f8fafc;
+}
+
+.partner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.partner-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.partner-header h2 {
+    font-size: 2.2rem;
+    color: var(--color-navy, #0b2545);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.partner-header p {
+    color: #555555;
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Why Partner With Us Sub-section */
+.why-partner-wrapper {
+    margin-bottom: 60px;
+}
+
+.why-partner-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--color-navy, #0b2545);
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Equal Height Benefit Cards */
+.benefit-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Consistent Icon Placeholder Space */
+.benefit-icon-space {
+    width: 70px;
+    height: 70px;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px dashed #cbd5e1; /* Visual indicator for empty slot until icon is added */
+}
+
+.benefit-icon-space img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+/* Card Typography */
+.benefit-card h4 {
+    font-size: 1.1rem;
+    color: var(--color-navy, #0b2545);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1; /* Ensures consistent vertical alignment across cards */
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    .partner-section {
+        padding: 60px 20px;
+    }
+}
+
         .news-section {
     padding: 100px 40px;
     background-color: var(--color-white, #ffffff);
@@ -1715,12 +1839,62 @@
 
     <section class="partner-section" id="partner">
     <div class="partner-container">
+        
+        <!-- PARTNERSHIP INTRODUCTORY HEADER -->
         <div class="partner-header">
             <span class="section-tag">Collaborate With Us</span>
             <h2>Become a Partner</h2>
-            <p>Join our global network of brands and distribution partners. Fill out the form below to connect with our team.</p>
+            <p>G-TWELV welcomes strategic collaborations. We work closely with our partners to create shared opportunities, expand global market reach, and support long-term growth.</p>
         </div>
-        
+
+        <!-- WHY PARTNER WITH US SECTION & CARDS -->
+        <div class="why-partner-wrapper">
+            <h3 class="why-partner-title">Why Partner With Us</h3>
+            
+            <div class="benefits-grid">
+                <!-- Benefit Card 1: Global Reach -->
+                <div class="benefit-card">
+                    <!-- GLOBAL REACH ICON HERE -->
+                    <div class="benefit-icon-space">
+                        <img src="" alt="Global Reach Icon">
+                    </div>
+                    <h4>Global Reach</h4>
+                    <p>Connect with an international network and expand your market opportunities.</p>
+                </div>
+
+                <!-- Benefit Card 2: Strategic Partnership -->
+                <div class="benefit-card">
+                    <!-- STRATEGIC PARTNERSHIP ICON HERE -->
+                    <div class="benefit-icon-space">
+                        <img src="" alt="Strategic Partnership Icon">
+                    </div>
+                    <h4>Strategic Partnership</h4>
+                    <p>Build long-term relationships designed around shared growth.</p>
+                </div>
+
+                <!-- Benefit Card 3: Reliable Distribution -->
+                <div class="benefit-card">
+                    <!-- RELIABLE DISTRIBUTION ICON HERE -->
+                    <div class="benefit-icon-space">
+                        <img src="" alt="Reliable Distribution Icon">
+                    </div>
+                    <h4>Reliable Distribution</h4>
+                    <p>Benefit from structured logistics and distribution capabilities.</p>
+                </div>
+
+                <!-- Benefit Card 4: Quality & Standards -->
+                <div class="benefit-card">
+                    <!-- QUALITY & STANDARDS ICON HERE -->
+                    <div class="benefit-icon-space">
+                        <img src="" alt="Quality & Standards Icon">
+                    </div>
+                    <h4>Quality & Standards</h4>
+                    <p>Work with a company focused on quality, reliability, and professional standards.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXISTING PARTNERSHIP FORM -->
         <form class="partner-form" action="https://formsubmit.co/connect@g-twelv.com" method="POST">
             <!-- Email settings -->
             <input type="hidden" name="_subject" value="New G-TWELV Partnership Proposal">
@@ -1764,6 +1938,7 @@
                 Submit Proposal
             </button>
         </form>
+
     </div>
 </section>
 
