@@ -374,6 +374,84 @@
             background-color: var(--color-grey-light, #f8f9fa) !important;
             color: var(--color-cyan, #00b4d8) !important;
         }
+
+        /* Page Hero Banner Container */
+.page-hero {
+    position: relative;
+    width: 100%;
+    height: 380px; /* Adjust height to make it taller or shorter */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 0; /* Sits cleanly right under the navbar */
+}
+
+/* The Image Tag styled as a background with a blur filter */
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px); /* Creates the subtle blur effect */
+    transform: scale(1.04); /* Slightly scales up to prevent blurred edges from showing */
+    z-index: 1;
+}
+
+/* Dark Navy Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 37, 69, 0.6); /* G-TWELV Navy overlay tint */
+    z-index: 2;
+}
+
+/* Text and Breadcrumb Content */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #cbd5e1;
+}
+
+.breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: #00b4d8; /* Cyan hover color */
+}
+
+.breadcrumb span {
+    margin: 0 8px;
+}
+
+.breadcrumb .current {
+    color: #00b4d8; /* Current page highlighted in cyan */
+}
         
     </style>
 </head>
@@ -426,7 +504,23 @@
             </div>
         </div>
     </header>
-        
+
+
+<section class="page-hero">
+    <img src="about-us-hero.jpg" alt="About Us Hero" class="hero-bg-img">
+    
+   
+    <div class="hero-overlay"></div>
+    
+    
+    <div class="hero-content">
+        <h1>OUR BRANDS</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <span>></span> <span class="current">Our Brands</span>
+        </div>
+    </div>
+</section>
+    
             <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
